@@ -28,7 +28,7 @@
                             @endphp
                         @endforeach
                         <hr>
-                        <p>Total: Rp. {{ number_format($total_price) }}</p>
+                        <p>Total: Rs. {{ number_format($total_price) }}</p>
                         <hr>
 
                         @if ($order->is_paid == false && $order->payment_receipt == null && !Auth::user()->is_admin)
@@ -37,7 +37,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label>Upload your payment receipt</label>
-                                    <input type="file" name="payment_receipt" class="form-control">
+                                    <input type="file" name="payment_receipt" class="form-control" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-3">Submit payment</button>
                             </form>

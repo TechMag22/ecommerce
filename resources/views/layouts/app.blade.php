@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>E - Commerce AldiState</title>
+    <title>E - Commerce website</title>
     <link rel="shortcut icon" href="{{ asset('favicon2.ico') }}">
 
     <!-- Fonts -->
@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    E - Commerce AldiState
+                    E - Commerce Website
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -89,6 +89,7 @@
         </nav>
 
         <main class="py-4">
+            @include('flash_msg')
             @yield('content')
         </main>
     </div>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -74,6 +75,11 @@ class OrderController extends Controller
     public function submit_payment_receipt(Order $order, Request $request)
     {
         $file = $request->file('payment_receipt');
+        $extension = $file->getClientOriginalExtension();
+        if (!in_array($extension, array('jpg','jpeg','png','pdf'))) {
+            Session::flash("alert-danger", "Payment receipt doesn't have valid type");
+            return Redirect::back();
+        }
         $path = time() . '_' . $order->id . '.' . $file->getClientOriginalExtension();
 
         Storage::disk('local')->put('public/' . $path, file_get_contents($file));

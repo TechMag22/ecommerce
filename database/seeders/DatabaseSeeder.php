@@ -42,5 +42,37 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'),
             'is_admin' => true,
         ]);
+        DB::table('categories')->insert([
+            [
+                'name' => 'Phones',
+                'description' => 'Phones',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], 
+            [
+                'name' => 'Laptops',
+                'description' => 'Laptops',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Tablets',
+                'description' => 'Tablets',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Furnitures',
+                'description' => 'Furnitures',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Electronics',
+                'description' => 'Electronics',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
     }
 }

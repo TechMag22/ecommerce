@@ -11,6 +11,15 @@ class Product extends Model
 
     protected $guarded = ['id'];
 
+    protected $fillable = [
+        'category_id',
+        'name',
+        'price',
+        'description',
+        'image',
+        'stock'
+    ];
+
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
