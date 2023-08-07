@@ -29,4 +29,19 @@ class Product extends Model
     {
         return $this->hasMany(Cart::class);
     }
+
+    public function getProducts($filter = array()) {
+        $query = Product::query()
+        ->select('*');
+        if (isset($filter['cat'])) {
+            $query->where('category_id', $filter['cat']);
+        }
+        if (isset($filter['min_price'])) {
+            $query->where('price', '>=', $filter['min_price']);
+        }
+        if (isset($filter['max_price'])) {
+            $query->where('price', '<=', $filter['max_price']);
+        }
+        return $query->get();
+    }
 }

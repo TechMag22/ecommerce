@@ -45,28 +45,27 @@ class ProductController extends Controller
         return Redirect::route('create_product');
     }
 
-    public function index_product()
+    public function index_product(Request $request)
     {
         $user = Auth::user();
-        $products = Product::all();
+        $products = new Product();
+        $filter = array();
+        if ($request->query('q_cat')) {
+            $filter['cat'] = $request->query('q_cat');
+        }
+        if ($request->query('q_min_rs')) {
+            $filter['min_price'] = $request->query('q_min_rs');
+        }
+        if ($request->query('q_max_rs')) {
+            $filter['max_price'] = $request->query('q_max_rs');
+        }
+        $prods = $products->getProducts($filter);
         $categories = Category::all();
         return view('index_product', [
-            'products' => $products,
+            'products' => $prods,
             'categories' => $categories,
             'user' => $user,
         ]);
-    }
-
-    public function category_product(Category $category)
-    {
-        $user = Auth::user();
-        $products = Product::all()->where('category_id', $category->id);
-        $categories = Category::all();
-        return view('index_product', [
-            'products' => $products,
-            'categories' => $categories,
-            'user' => $user,
-        ], compact('category'));
     }
 
     public function show_product(Product $product)

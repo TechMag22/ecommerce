@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [ProductController::class, 'index_product'])->name('index_product');
-Route::get('/category/{category}', [ProductController::class, 'category_product'])->name('category_product');
 Route::get('/product/view/{product}', [ProductController::class, 'show_product'])->name('show_product');
 
 Route::middleware('admin')->group(function() {
