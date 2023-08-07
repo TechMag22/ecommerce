@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <p>This is an E-Commerce website using Laravel version 9, this application has the following features:</p>
 <ul>
   <li>Authentication Scaffolding</li>
@@ -25,6 +24,3 @@
   <li>Middleware Group</li>
   <li>Roles for Order Feature</li>
 </ul>
-=======
-# ecommerce
->>>>>>> fd10c2d (Initial commit)
