@@ -24,3 +24,21 @@
   <li>Middleware Group</li>
   <li>Roles for Order Feature</li>
 </ul>
+
+<p>Configuration Steps:</p>
+<br>
+<p>git clone https://github.com/TechMag22/ecommerce.git</p>
+<p>Copy environment example file and rename it into .env file</p>
+<p>Open terminal and do the necessary pre-build components as follows:</p>
+<p>composer install</p>
+<p>php artisan key:generate</p>
+<p>npm install vite</p>
+<p>npm run build</p>
+<p>php artisan migrate --seed</p>
+<p>php artisan serve</p>
+<p>Login as admin by using the credentials DatabaseSeeder file user modal data</p>
+<p>Create product under admin dropdown menu</p>
+<p>Once created all the products run the command "php artisan storage:link" to link uploaded product images</p>
+<p>The application setup is over</p>
+<p>You can register and login as different users by register and login menus</p>
+<p>Thank you...</p>

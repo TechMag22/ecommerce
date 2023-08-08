@@ -36,16 +36,22 @@
                 <div class="card">
                     <div class="card-header">{{ __('Products') }}</div>
                     <div class="card-group m-auto">
-                        @foreach ($products as $product)
-                            <img class="card-img-top" src="{{ url('storage/' . $product->image) }}"
-                                alt="Card image cap">
+                        @if ($products->isNotEmpty())
+                            @foreach ($products as $product)
+                                <img class="card-img-top" src="{{ url('storage/' . $product->image) }}"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">{{ $product->name }}</p>
+                                    <form action="{{ route('show_product', $product) }}" method="get">
+                                        <button type="submit" class="btn btn-primary">Show detail</button>
+                                    </form>
+                                </div>
+                            @endforeach
+                        @else 
                             <div class="card-body">
-                                <p class="card-text">{{ $product->name }}</p>
-                                <form action="{{ route('show_product', $product) }}" method="get">
-                                    <button type="submit" class="btn btn-primary">Show detail</button>
-                                </form>
+                                No records found.
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
