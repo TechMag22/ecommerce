@@ -4,8 +4,6 @@
   <li>Create Product</li>
   <li>Show All Product</li>
   <li>Show Detail Product</li>
-  <li>Update Product</li>
-  <li>Delete Product</li>
   <li>Add to Cart</li>
   <li>Show Cart</li>
   <li>Update Cart</li>
@@ -45,6 +43,6 @@
 <p>Need to login with the user email in https://mailtrap.io/</p>
 <p>Once logged in, navigate to Email Testing->Inboxes->My Inbox</p>
 <p>Select the Laravel 9+ from the Integrations dropdown and copy the email configuation into your .env file</p>
-<p>Once mail configuration done you can reset your password.</p>
+<p>Once mail configuration done you can reset your password</p>
 <p>Reset password link send to the mailtrap account inbox, you can reset the password by accessing the link</p>
 <p>Thank you...</p>
