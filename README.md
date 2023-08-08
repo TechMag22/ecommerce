@@ -25,8 +25,8 @@
   <li>Roles for Order Feature</li>
 </ul>
 
-<p>Configuration Steps:</p>
 <br>
+<p>Configuration Steps:</p>
 <p>git clone https://github.com/TechMag22/ecommerce.git</p>
 <p>Copy environment example file and rename it into .env file</p>
 <p>Open terminal and do the necessary pre-build components as follows:</p>
@@ -41,4 +41,10 @@
 <p>Once created all the products run the command "php artisan storage:link" to link uploaded product images</p>
 <p>The application setup is over</p>
 <p>You can register and login as different users by register and login menus</p>
+<p>For forget password email configuration follow the below steps:</p>
+<p>Need to login with the user email in https://mailtrap.io/</p>
+<p>Once logged in, navigate to Email Testing->Inboxes->My Inbox</p>
+<p>Select the Laravel 9+ from the Integrations dropdown and copy the email configuation into your .env file</p>
+<p>Once mail configuration done you can reset your password.</p>
+<p>Reset password link send to the mailtrap account inbox, you can reset the password by accessing the link</p>
 <p>Thank you...</p>
